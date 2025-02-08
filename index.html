@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rushmore - 3D 浮雕生成</title>
+    <style>
+        body { margin: 0; overflow: hidden; }
+        canvas { display: block; }
+        #fileInput {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            z-index: 10;
+        }
+    </style>
+    <style>
+        #imageContainer {
+            position: fixed;
+            bottom: 10px;
+            left: 10px;
+            display: flex;
+            gap: 10px;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 5px;
+            border-radius: 5px;
+        }
+        #originalCanvas, #blurredCanvas {
+            width: 128px;
+            height: 128px;
+            border: 1px solid white;
+        }
+    </style>    
+</head>
+<body>
+    <input type="file" id="fileInput" accept="image/*">
+    <script type="module" src="/src/main.js"></script>
+    <div id="imageContainer">
+        <canvas id="originalCanvas"></canvas>
+        <canvas id="blurredCanvas"></canvas>
+    </div>    
+</body>
+</html>
